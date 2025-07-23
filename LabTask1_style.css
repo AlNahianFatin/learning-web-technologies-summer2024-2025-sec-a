@@ -18,10 +18,12 @@
 
   td.left, td.right {
       width: 15%;
+      height: 500px;
   }
 
   td.center {
-      width: 70%;
+      width: 50%;
+            height: 500px;
   }
 
   footer {
