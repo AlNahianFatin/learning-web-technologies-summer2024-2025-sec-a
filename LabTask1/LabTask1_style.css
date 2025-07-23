@@ -3,7 +3,8 @@
       border-collapse: collapse;
   }
 
-  th, td {
+  th,
+  td {
       border: 1px solid black;
       vertical-align: top;
       padding: 10px;
@@ -16,14 +17,15 @@
       height: 60px;
   }
 
-  td.left, td.right {
+  td.left,
+  td.right {
       width: 15%;
       height: 500px;
   }
 
   td.center {
       width: 50%;
-            height: 500px;
+      height: 500px;
   }
 
   footer {
