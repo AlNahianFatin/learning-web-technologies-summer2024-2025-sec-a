@@ -1,0 +1,35 @@
+  table {
+      width: 100%;
+      border-collapse: collapse;
+  }
+
+  th, td {
+      border: 1px solid black;
+      vertical-align: top;
+      padding: 10px;
+  }
+
+  th {
+      font-size: 28px;
+      font-weight: bold;
+      text-align: center;
+      height: 60px;
+  }
+
+  td.left, td.right {
+      width: 15%;
+  }
+
+  td.center {
+      width: 70%;
+  }
+
+  footer {
+      text-align: center;
+      font-size: 12px;
+      padding: 5px;
+  }
+
+  .links-header {
+      font-weight: bold;
+  }
