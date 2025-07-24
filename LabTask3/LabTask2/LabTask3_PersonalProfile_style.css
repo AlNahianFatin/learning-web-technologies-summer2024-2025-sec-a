@@ -1,0 +1,39 @@
+  table {
+      width: 600px;
+      border-collapse: collapse;
+  }
+
+  th,
+  td {
+      border: 1px solid black;
+      vertical-align: top;
+      padding: 10px;
+  }
+
+  th {
+      font-size: 28px;
+      font-weight: bold;
+      text-align: center;
+      height: 60px;
+  }
+
+  td.left,
+  td.right {
+      width: auto;
+      height: auto;
+  }
+
+  td.center {
+      width: auto;
+      height: auto;
+  }
+
+  footer {
+      text-align: center;
+      font-size: 12px;
+      padding: 5px;
+  }
+
+  .links-header {
+      font-weight: bold;
+  }
