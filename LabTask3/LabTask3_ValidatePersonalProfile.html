@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LabTask3_ValidatePersonalProfile</title>
+
+    <link rel="stylesheet" href="LabTask3_PersonalProfile_style.css">
+</head>
+
+<body>
+    <form action="" method="get">
+        <table>
+            <tr>
+                <th colspan="3"><b>PERSON PROFILE</b></th>
+            </tr>
+            <tr>
+                <td class="left">
+                    <label>Name</label>
+                </td>
+                <td class="center">
+                    <input type="text" name="name" value="" id="username">
+                </td>
+                <td>
+                    <p id="usernameMssg" style="color: red;"></p>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="left">
+                    <label>Email</label>
+                </td>
+                <td class="center">
+                    <input type="email" name="email" value="" id="email">
+                </td>
+                <td>
+                    <p id="emailMssg" style="color: red;"></p>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="left">
+                    <label>Gender</label>
+                </td>
+                <td class="center">
+                    <label>
+                        <input type="radio" value="MALE" name="gender" id="genderM">Male
+                    </label>
+                    <label>
+                        <input type="radio" value="FEMALE" name="gender" id="genderF">Female
+                    </label>
+                    <label>
+                        <input type="radio" value="OTHER" name="gender" id="genderO">Other
+                    </label>
+                </td>
+                <td>
+                    <p id="genderMssg" style="color: red;"></p>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="left">
+                    <label>Date of Birth</label>
+                </td>
+                <td class="center" style="padding: 1;">
+                    <table style="border-collapse: collapse; width: 100%">
+                        <tr>
+                            <td style="border: 0cap; padding: 0; padding-right: 7px;">
+                                <input type="number" name="" style="width: 40px;" id="dobD">/
+                            </td>
+                            <td style="border: 0cap; padding: 0; padding-right: 7px;">
+                                <input type="number" name="" style="width: 40px;" id="dobM">/
+                            </td>
+                            <td style="border: 0cap; padding: 0;">
+                                <input type="number" name="" style="width: 60px; margin-right: 5px;"
+                                    id="dobY"><i>(dd/mm/yyyy)</i>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <p id="dobMssg" style="color: red;"></p>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="left">
+                    <label>Blood Group</label>
+                </td>
+                <td class="center">
+                    <select name="bg" id="bld" style="font-size: 15px;">
+                        <option value="">Select Blood Group</option>
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                    </select><br>
+                </td>
+                <td>
+                    <p id="bldMssg" style="color: red;"></p>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="left">
+                    <label>Degree</label>
+                </td>
+                <td class="center">
+                    <table style="border-collapse: collapse; width: 100%; padding: 0;">
+                        <tr>
+                            <td style="border: 0cap; padding: 0;">
+                                <input type="checkbox" value="ssc" name="degree">SSC
+                            </td>
+                            <td style="border: 0cap; padding: 0;">
+                                <input type="checkbox" value="hsc" name="degree">HSC
+                            </td>
+                            <td style="border: 0cap; padding: 0;">
+                                <input type="checkbox" value="bsc" name="degree">BSc.
+                            </td>
+                            <td style="border: 0cap; padding: 0;">
+                                <input type="checkbox" value="msc" name="degree">MSc.
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="left">
+                    <label>Photo</label>
+                </td>
+                <td class="center" colspan="2">
+                    <input type="file" value="pp" name="pp" style="margin-left: 10px;" id="pp">
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan=" 3" style="text-align:center; font-size: 12px; height: 20px;">
+                    <p id="ppMssg" style="font-size: 15px; color: red;"></p>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" style="text-align: right; font-size: 12px;">
+                    <input type="submit" name="submit" value="Submit" onclick="validate(event)">
+                    <!-- <input type="button" name="reset" value="Reset" style="margin-left: 5px;" onclick="clear()"> <br> -->
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        // function clear() {
+        //     document.getElementById('username').value = "";
+        //     document.getElementById('email').value = "";
+        //     document.getElementById('dobD').value = "";
+        //     document.getElementById('dobM').value = "";
+        //     document.getElementById('dobY').value = "";
+        //     document.getElementById('bld').value = "";
+        //     document.getElementById('pp').value = "";
+
+        //     document.getElementById('genderM').checked = false;
+        //     document.getElementById('genderF').checked = false;
+        //     document.getElementById('genderO').checked = false;
+
+        //     let degrees = document.getElementsByName('degree');
+        //     for (let i = 0; i < degrees.length; i++) {
+        //         degrees[i].checked = false;
+        //     }
+
+        //     document.getElementById('usernameMssg').innerHTML = "";
+        //     document.getElementById('emailMssg').innerHTML = "";
+        //     document.getElementById('genderMssg').innerHTML = "";
+        //     document.getElementById('dobMssg').innerHTML = "";
+        //     document.getElementById('bldMssg').innerHTML = "";
+        //     document.getElementById('ppMssg').innerHTML = "";
+        // }
+
+        // let username = document.getElementById('username').value
+        // let email = document.getElementById('email').value
+        // let gender = document.querySelector('input[name="gender"]:checked');
+        // let dobD = document.getElementById('dobD').value
+        // let dobM = document.getElementById('dobM').value
+        // let dobY = document.getElementById('dobY').value
+        // let bld = document.getElementById('bld').value
+        // let pp = document.getElementById('pp').value
+
+        function validate(event) {
+            event.preventDefault();
+
+            let username = document.getElementById('username').value
+            let email = document.getElementById('email').value
+            let gender = document.querySelector('input[name="gender"]:checked');
+            let dobD = document.getElementById('dobD').value
+            let dobM = document.getElementById('dobM').value
+            let dobY = document.getElementById('dobY').value
+            let bld = document.getElementById('bld').value
+            let pp = document.getElementById('pp').value
+
+            if (username == "") {
+                let mssg = document.getElementById('usernameMssg')
+                mssg.style.color = "red";
+                mssg.innerHTML = "Please enter username first!"
+            }
+            else {
+                username.length < 10
+                    ? document.getElementById('usernameMssg').innerHTML = "Username must be minimum 10 characters!"
+                    : document.getElementById('usernameMssg').innerHTML = "";
+            }
+
+            if (email == "") {
+                let mssg = document.getElementById('emailMssg')
+                mssg.innerHTML = "Please enter email!"
+            }
+            else {
+                !email.includes('@') || !email.includes('.')
+                    ? document.getElementById('emailMssg').innerHTML = "Please enter valid Email!<br>Hint: example@gmail.com"
+                    : document.getElementById('emailMssg').innerHTML = "";
+            }
+
+            if (!gender) {
+                let mssg = document.getElementById('genderMssg')
+                mssg.innerHTML = "Please select your gender!"
+            }
+            else {
+                document.getElementById('genderMssg').innerHTML = ""
+            }
+
+            if (dobD == "" || dobM == "" || dobY == "") {
+                let mssg = document.getElementById('dobMssg')
+                mssg.innerHTML = "Please enter full date of birth!"
+            }
+            else {
+                if (dobD < 1 || dobD > 31)
+                    document.getElementById('dobMssg').innerHTML = "Invalid date!"
+                else if (dobM < 1 || dobM > 12)
+                    document.getElementById('dobMssg').innerHTML = "Invalid month!"
+                else if (dobY < 1900 || dobM > 2025)
+                    document.getElementById('dobMssg').innerHTML = "Invalid year!"
+                else
+                    document.getElementById('dobMssg').innerHTML = ""
+            }
+
+            if (bld == "") {
+                let mssg = document.getElementById('bldMssg')
+                mssg.innerHTML = "Please select blood group!"
+            }
+            else 
+                document.getElementById('bldMssg').innerHTML = ""
+
+            if (pp == "") {
+                let mssg = document.getElementById('ppMssg')
+                mssg.innerHTML = "Please upload your photo!"
+            }
+            else 
+                document.getElementById('ppMssg').innerHTML = ""
+        }
+    </script>
+</body>
+
+</html>

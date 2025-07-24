@@ -1,5 +1,5 @@
   table {
-      width: 600px;
+      width: auto;
       border-collapse: collapse;
   }
 
@@ -22,18 +22,14 @@
       width: auto;
       height: auto;
   }
+  td.right {
+    width: auto;
+  }
 
   td.center {
       width: auto;
       height: auto;
   }
-
-  footer {
-      text-align: center;
-      font-size: 12px;
-      padding: 5px;
-  }
-
-  .links-header {
-      font-weight: bold;
+  p {
+    margin: 0;
   }
