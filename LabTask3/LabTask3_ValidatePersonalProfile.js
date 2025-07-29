@@ -45,7 +45,7 @@ function validate(event) {
     }
     else {
         if (dobD < 1 || dobD > 31)
-            document.getElementById('dobMssg').innerHTML = "Invalid date!"
+            document.getElementById('dobMssg').innerHTML = "Invalid day!"
         else if (dobM < 1 || dobM > 12)
             document.getElementById('dobMssg').innerHTML = "Invalid month!"
         else if (dobY < 1900 || dobM > 2025)
