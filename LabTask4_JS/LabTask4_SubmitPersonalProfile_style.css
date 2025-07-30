@@ -5,6 +5,9 @@
 
   th,
   td {
+      width: auto;
+      max-width: 1800px;
+      word-break: break-word;
       border: 1px solid black;
       vertical-align: top;
       padding: 10px;
