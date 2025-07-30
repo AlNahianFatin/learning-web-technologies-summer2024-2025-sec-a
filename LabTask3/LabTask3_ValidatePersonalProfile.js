@@ -1,5 +1,5 @@
 function validate(event) {
-    event.preventDefault();
+    event.preventDefault()
 
     let username = document.getElementById('username').value
     let email = document.getElementById('email').value

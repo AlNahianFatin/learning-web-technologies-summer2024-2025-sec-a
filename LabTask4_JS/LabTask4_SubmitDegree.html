@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LabTask4_SubmitDegree</title>
+</head>
+
+<body>
+    <form action="index.html" method="get">
+        <fieldset style="width: 200px;">
+            <legend>Degree</legend>
+            <table style="border-collapse: collapse; width: 100%;">
+                <tr>
+                    <td>
+                        <input type="checkbox" value="ssc" name="degree" id="ssc">SSC
+                    </td>
+                    <td>
+                        <input type="checkbox" value="hsc" name="degree" id="hsc">HSC
+                    </td>
+                    <td>
+                        <input type="checkbox" value="bsc" name="degree" id="bsc">BSc
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+        <input type="submit" name="submit" value="Submit" onclick="validate(event)"> <br>
+        <p id="dError" style="color: red;"></p>
+    </form>
+
+    <script>
+        function validate(event) {
+            event.preventDefault()
+
+            let ssc = document.getElementById("ssc").checked
+            let hsc = document.getElementById("hsc").checked
+            let bsc = document.getElementById("bsc").checked
+            let mssg = document.getElementById("dError")
+
+            if(!ssc && !hsc && !bsc)
+                mssg.innerHTML = "At least one of the degrees has to be selected!"
+            else
+                mssg.innerHTML = ""
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LabTask4_SubmitEmail</title>
+</head>
+
+<body>
+    <form action="index.html" method="post">
+        <label>Email</label> <br>
+        <input type="email" name="email" value="" id="email"> <br>
+        <input type="submit" name="submit" value="Submit" onclick="validate(event)"> <br>
+        <p id="eError" style="color: red;"></p>
+    </form>
+
+    <script>
+        function validate(event) {
+            event.preventDefault()
+
+            let email = document.getElementById("email").value
+            let mssg = document.getElementById("eError")
+
+            if (email == "") 
+                mssg.innerHTML = "Please enter email!"
+            else {
+                !email.includes('@') || !email.includes('.')
+                    ? mssg.innerHTML = "Please enter valid Email!<br>i.e: anything@example.com"
+                    : mssg.innerHTML = "";
+            }
+        }
+    </script>
+</body>
+
+</html>

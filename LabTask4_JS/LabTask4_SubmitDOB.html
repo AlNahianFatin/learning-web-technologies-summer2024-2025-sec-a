@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LabTask4_SubmitDOB</title>
+</head>
+
+<body>
+    <form action="index.html" method="get">
+        <fieldset style="width: 200px;">
+            <legend><b>Date of Birth</b></legend>
+            <table style="border-collapse: collapse; width: 100%;">
+                <tr>
+                    <td>
+                        <label>dd
+                            <input type="number" value="dob" name="" style="width: 30px; margin-right: 10px;"
+                                id="dobD">/
+                        </label>
+                    </td>
+                    <td>
+                        <label>mm
+                            <input type="number" value="dob" name="" style="width: 30px; margin-right: 10px;"
+                                id="dobM">/
+                        </label>
+                    </td>
+                    <td>
+                        <label>yyyy
+                            <input type="number" value="dob" name="" style="width: 45px; margin-right: 10px;" id="dobY">
+                        </label>
+                    </td>
+                </tr>
+            </table> <br>
+            <input type="submit" name="submit" value="Submit" onclick="validate(event)"> <br>
+        </fieldset>
+        <p id="dobError" style="color: red;"></p>
+    </form>
+
+    <script>
+        function validate(event) {
+            event.preventDefault()
+
+            let dobD = document.getElementById("dobD").value
+            let dobM = document.getElementById("dobM").value
+            let dobY = document.getElementById("dobY").value
+            let mssg = document.getElementById("dobError")
+
+            if (dobD == "" || dobM == "" || dobY == "") 
+                mssg.innerHTML = "Please enter full date of birth!"
+            else {
+                if (dobD < 1 || dobD > 31)
+                    mssg.innerHTML = "Invalid day!"
+                else if (dobM < 1 || dobM > 12)
+                    mssg.innerHTML = "Invalid month!"
+                else if (dobY < 1900 || dobM > 2016)
+                    mssg.innerHTML = "Invalid year!"
+                else
+                    mssg.innerHTML = ""
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LabTask4_SubmitGender</title>
+</head>
+
+<body>
+    <form action="index.html" method="get">
+        <fieldset style="width: 200px;">
+            <legend>Gender</legend>
+            <label>
+                <input type="radio" value="MALE" name="gender">Male
+            </label>
+            <label>
+                <input type="radio" value="FEMALE" name="gender">Female
+            </label>
+            <label>
+                <input type="radio" value="OTHER" name="gender">Other
+            </label>
+        </fieldset>
+        <input type="submit" name="submit" value="Submit" onclick="validate(event)"> <br>
+        <p id="gError" style="color: red;"></p>
+    </form>
+
+    <script>
+        function validate(event) {
+            event.preventDefault()
+            let gender = document.querySelector('input[name="gender"]:checked');
+            let mssg = document.getElementById("gError")
+
+            if (!gender) 
+                mssg.innerHTML = "Please select your gender!"
+            else {
+                mssg.innerHTML = ""
+            }
+        }
+    </script>
+</body>
+
+</html>

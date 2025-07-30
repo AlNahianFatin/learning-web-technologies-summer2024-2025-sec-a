@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LabTask4_SubmitPP</title>
+</head>
+
+<body>
+    <form action="index.html" method="post">
+        <fieldset style="width: 350px;">
+            <legend>Profile Picture</legend>
+            <table style="border-collapse: collapse; width: 100%;">
+                <tr>
+                    <td>
+                        User Id<input type="number" name="id" style="margin-left: 10px;" id="uID">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Picture<input type="file" value="pp" name="pp" style="margin-left: 10px;" id="ppID">
+                    </td>
+                </tr>
+            </table>
+            <input type="submit" name="submit" value="Submit" onclick="validate(event)"> <br>
+        </fieldset>
+        <p id="ppError" style="color: red;"></p>
+    </form>
+
+    <script>
+        function validate(event) {
+            event.preventDefault()
+
+            let u = document.getElementById("uID").value
+            let pp = document.getElementById("ppID").value
+            let mssg = document.getElementById("ppError")
+
+            if(u == "")
+                mssg.innerHTML = "Please enter your user ID first!"
+            else if(!(u > 0))
+                mssg.innerHTML = "user ID has to be a positive number!"
+            else if (pp == "") 
+                mssg.innerHTML = "Please upload your photo!"
+            else
+                mssg.innerHTML = ""
+        }
+    </script>
+</body>
+
+</html>

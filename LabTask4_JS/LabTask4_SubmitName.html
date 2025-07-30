@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LabTask4_SubmitName</title>
+</head>
+
+<body>
+    <form action="" method="post">
+        <label>Name</label> <br>
+        <input type="text" name="name" value="" id="username"> <br>
+        <input type="submit" name="submit" value="Submit" onclick="validate(event)"> <br>
+        <p id="nError" style="color: red;"></p>
+    </form>
+
+    <script>
+        function validate(event) {
+            event.preventDefault()
+
+            let username = document.getElementById('username').value
+            let mssg = document.getElementById("nError")
+
+            if (username == "")
+                mssg.innerHTML = "Please enter your name first!"
+            else if (!(username[0] >= 'a' && username[0] <= 'z') ||
+                      (username[0] >= 'A' && username[0] <= 'Z'))
+                mssg.innerHTML = "Name must start with a letter!"
+            else if (!username.includes(" "))
+                mssg.innerHTML = "Please enter at least 2 words!"
+            else {
+                let valid = true;
+                for (let i = 0; i < username.length; i++) {
+                    let ch = username[i];
+                    if (
+                        !((ch >= 'a' && ch <= 'z') ||
+                            (ch >= 'A' && ch <= 'Z') ||
+                            ch === '.' ||
+                            ch === '-' ||
+                            ch === ' ')
+                    ) {
+                        valid = false;
+                        break;
+                    }
+                }
+                if (!valid) {
+                    mssg.innerHTML = "Name can only contain letters, dot (.), dash (-), or space!";
+                }
+                else {
+                    mssg.innerHTML = "";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
